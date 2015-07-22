@@ -1,0 +1,36 @@
+{
+  "name": "FontAstico",
+  "version": "1.0.0",
+  "description": "Help designers to FontAwesome font icons",
+  "contributors": [
+    {
+      "name": "@figuarnieri",
+      "email": "filipe@ibaro.com.br",
+      "url": "http://studyou.com.br"
+    },
+    {
+      "name": "@leonardovivanco",
+      "email": "leonardo@ibaro.com.br",
+      "url": "http://twitter.com/leonardovivanco"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/figuarnieri/FontAstico/"
+  },
+  "bugs": {
+    "url": "https://github.com/figuarnieri/FontAstico/issues"
+  },
+  "keywords": [
+    "Screen Presentation",
+    "FontAstico",
+    "Ibaro"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-contrib-uglify": "^0.8.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
