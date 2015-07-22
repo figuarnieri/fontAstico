@@ -34,11 +34,6 @@ module.exports = function(grunt) {
 				files: {
 					'js/all.js': ['js/io/jquery-2.1.4.min.js', 'js/plugins/*.js', 'js/io/*.js']
 				}
-			},
-			ie: {
-				files: {
-					'js/all-ie.js': ['js/io/ie/jquery-1.11.3.min.js', 'js/io/ie/jquery.html5support.min.js', 'js/plugins/*.js', 'js/io/main.js']
-				}
 			}
 		},
 	});

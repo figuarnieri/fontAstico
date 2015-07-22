@@ -5,16 +5,16 @@
 @import "compass/css3/transition";
 @import "compass/layout/sticky-footer";
 
-@import "io/reset.scss";
-@import "io/default.scss";
+@import "io/_reset.scss";
+@import "io/_default.scss";
 
-@import "out/font-awesome.scss";
+@import "out/_font-awesome.scss";
 
-@import "theme/style.scss";
-@import "theme/header.scss";
-@import "theme/home.scss";
-@import "theme/page.scss";
-@import "theme/footer.scss";
+@import "theme/_style.scss";
+@import "theme/_header.scss";
+@import "theme/_home.scss";
+@import "theme/_page.scss";
+@import "theme/_footer.scss";
 
 @import "theme/extra/keyframes.scss";
 @import "theme/extra/webfonts.scss";
