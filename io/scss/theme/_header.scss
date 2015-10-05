@@ -1,14 +1,1 @@
-#up{
-	position: fixed;background-color: #eee;left: 0;top: 0;bottom: 0;color: #666;
-	._text{width: 100%;border-radius: 20px;position: relative;}
-	.input-text{
-		width: 100%;padding-right: 20px;color: #ccc;
-		&:focus{color: #333;}
-	}
-	.version{position: absolute;right: 15px;bottom: 100%;margin-bottom: 2px;font-size: 12px;color: #999;}
-	.fa-search{position: absolute;right: 13px;top: 10px;}
-	.logo{width: 90%;height: auto;max-width: 400px;display: block;margin: 20px auto;}
-	.result{font-family: 'Century Gothic', Arial;}
-	.result-number{font-size: 80px;line-height: 70px;margin-top: 20px;}
-	.result-text{font-size: 20px;line-height: 20px;}
-}
+#up{}
