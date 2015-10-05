@@ -1,18 +1,13 @@
 body{
 	overflow-x:hidden;
-	font-family: 'Courier New';
-	font-size: 10px;
+	font-family: Arial, Verdana;
 }
 main{height: 100%;}
 $height: 0px;
 @include sticky-footer($height, "#all", "#all", "#down");
 #all:after{content: '';display: block;height: $height;}
 
-#up{position: fixed;opacity: .5;background-color: #f3be17;width: 100%;}
-#up:hover{opacity: 1;}
-#main{padding-top: 50px;}
 .icon-font{font-size: 30px;width: 40px;display: inline-block;vertical-align: middle;margin-left: 10px;font-family: 'FontAwesome';color: #333;}
-.icon-name{font-size: 16px;color: #000;}
+.icon-name{font-size: 13px;color: #000;}
 .icon-item{border: 1px solid #eee;margin:3px 10px;border-radius: 4px;padding: 7px;color: #666;}
-.logo{font-size: 37px;font-weight: bold;color: #fff;}
 ._text{border: 1px solid #ddd;padding: 10px;font-size: 17px;font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;background-color: #fff;}
