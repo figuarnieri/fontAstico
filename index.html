@@ -17,12 +17,12 @@
 	<header id="up" role="banner" class="cf col-5">
 		<img class="logo" src="io/img/fontastico.png" alt="">
 		<div class="_text cf">
-			<div class="version">Font Awesome 4.4.2</div>
+			<div class="version">Font Awesome 4.6.1</div>
 			<input type="text" class="input-text" id="search" placeholder="Buscar Icone (ex.: cart ou carrinho)">
 			<button type="button" class="fa fa-search"></button>
 		</div>
 		<div class="result col-10 -col-5 ta-c">
-			<span class="result-number d-b" id="result-number">673</span>
+			<span class="result-number d-b" id="result-number">0</span>
 			<small class="result-text d-b" id="result-text">resultados</small>
 		</div>
 	</header>
@@ -749,9 +749,6 @@
 		<div class="col-33"><div class="icon-item" data-key="fa-youtube"><span class="icon-font">&#xF167;</span><span class="icon-name">.fa-youtube</span></div></div>
 		<div class="col-33"><div class="icon-item" data-key="fa-youtube-play"><span class="icon-font">&#xF16A;</span><span class="icon-name">.fa-youtube-play</span></div></div>
 		<div class="col-33"><div class="icon-item" data-key="fa-youtube-square"><span class="icon-font">&#xF166;</span><span class="icon-name">.fa-youtube-square</span></div></div>
-
-
-		<div class="col-33"><div class="icon-item" data-key="youtube-square"><span class="icon-font">&#61798;</span><span class="icon-name">.fa-youtube-square</span></div></div>
 	</main>
 	<footer id="down" role="contentinfo">
 
@@ -767,6 +764,7 @@
 			var text = iconSize[i].dataset.key;
 			icon.push(text.split('|'));
 		}
+		document.getElementById('result-number').textContent = iconSize.length;
 		document.getElementById('search').addEventListener('keyup', function(e){
 			var valor = this.value;
 			icon.forEach(function(e,i){
