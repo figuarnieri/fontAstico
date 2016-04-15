@@ -34,10 +34,10 @@ noscript p{position: fixed;left: 3px;top: 3px;right: 3px;background-color: #c00;
 
 /* GRID 20 COLLUMNS */
 $grid-width: 5%;
-.col-init{float: left;min-height: 1px;padding-left: 3px;padding-right: 3px;}
+%col-init{float: left;min-height: 1px;padding-left: 3px;padding-right: 3px;}
 @for $i from 1 through 20 {
 	.col-#{$i} {
-		@extend .col-init;
+		@extend %col-init;
 		width: $grid-width*$i;
 	}
 }
@@ -46,6 +46,7 @@ $grid-width: 5%;
 		margin-left: $grid-width*$i;
 	}
 }
+.col-33{width: 33.3%;@extend %col-init;}
 .col-r{padding-right: 0;}
 .col-l{padding-left: 0;}
 .col-rl,.col-lr{padding-left: 0;padding-right: 0;}
