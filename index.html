@@ -1,785 +1,130 @@
-﻿<!--
-	Dev:	Ibaro
-	Email:	suporte@ibaro.com.br
-	Lançamento:	//2016
--->
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#">
+<html lang="en">
 <head>
-	<title>FontAstico</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<meta name="robots" content="noindex, nofollow">
-	<link rel="stylesheet" href="io/css/all.css">
+  <meta charset="UTF-8">
+  <title>Fontastico Fonts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1" />
+  <style>
+    *{padding: 0;margin: 0;box-sizing: border-box;}
+    body{font-family: Arial;overflow-x: hidden;}
+    @keyframes headerHearth{
+      0%{transform: scale(1);}
+      10%{transform: scale(1.2);}
+      20%{transform: scale(1);}
+      30%{transform: scale(1.2);}
+      40%{transform: scale(1);}
+      100%{transform: scale(1);}
+    }
+    [pseudo-before]:before{content: attr(pseudo-before);}
+    .header{display: flex;padding: 10px;background-color: #eee;align-items: center;margin-bottom: 5px;}
+    .header--logo{width: 20%;position: relative;color: #e66;font-family: Arial, sans-serif;font-size: 22px;}
+    .header--logo:before{content: '♥ ';color: #e99;animation: headerHearth 1.4s infinite;display: inline-block;margin-right: 6px;}
+    .header--logo:after{content: '://icon.font';color: #999;font-size: 18px;}
+    .header--search{width: 70%;}
+    .header--input{width: 100%;padding: 10px;border: 1px solid #ccc;border-radius: 4px;}
+    .header--count{width: 10%;text-align: right;}
+    .header--counter{height: 17px;padding: 0 4px;line-height: 17px;font-family: Verdana;text-align: center;background-color: #e66;color: #fff;border-radius: 20px;font-size: 13px;display: inline-block;}
+    .icon--title{width: 100%;padding: 4px 20px 2px;font-size: 20px;text-align: center;background-color: #e66;color: #fff;margin-bottom: 10px;cursor: pointer;position: relative;transition: background-color .6s, color .6s;}
+    .icon--title:before{content: '';position: absolute;right: 10px;top: 10px;border: 7px solid transparent;border-top-color: #fff;transition: color .6s, transform .6s;transform-origin: 50% 4px;}
+    .icon--title-active{background-color: #ddd;color: #bbb;}
+    .icon--title-active:before{border-top-color: #bbb;transform: rotate(180deg);}
+    .icon--title-active .icon--version{color: #bbb;}
+    .icon--version{font-size: 10px;font-weight: lighter;display: inline-block;transform: translateY(-2px);color: #fbb;transition: color .6s;}
+    .icon--wrap{margin: 0 10px 10px;display: flex;flex-wrap: wrap;}
+    .icon--wrap-active{display: none;}
+    .icon--item{width: 10.6%;margin: .2%;border: 1px solid #eee;border-radius: 3px;padding: 3px;text-align: center;position: relative;}
+    .icon--item-hidden{display: none;}
+    .icon--unicode{position: absolute;right: 3px;top: 3px;padding: 3px 5px;border-radius: 2px;background-color: #ddd;color: #666;font-size: 10px;}
+    .icon--name{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;font-size: 12px;background-color: #eee;padding: 3px 4px;}
+    .icon--symbol{font-size: 40px;color: #777;height: 46px;}
+  </style>
 </head>
-
 <body>
-	<header id="up" role="banner" class="cf col-5">
-		<img class="logo" src="io/img/fontastico.png" alt="">
-		<div class="_text cf">
-			<div class="version">Font Awesome 4.6.1</div>
-			<input type="text" class="input-text" id="search" placeholder="Buscar Icone (ex.: cart ou carrinho)">
-			<button type="button" class="fa fa-search"></button>
-		</div>
-		<div class="result col-10 -col-5 ta-c">
-			<span class="result-number d-b" id="result-number">0</span>
-			<small class="result-text d-b" id="result-text">resultados</small>
-		</div>
-	</header>
-	<main id="main" role="main" class="cf col-15">
-
-		<div class="col-33"><div class="icon-item" data-key="fa-500px"><span class="icon-font">&#xF26E;</span><span class="icon-name">.fa-500px</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-adjust"><span class="icon-font">&#xF042;</span><span class="icon-name">.fa-adjust</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-adn"><span class="icon-font">&#xF170;</span><span class="icon-name">.fa-adn</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-align-center|alinhamento"><span class="icon-font">&#xF037;</span><span class="icon-name">.fa-align-center</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-align-justify|alinhamento"><span class="icon-font">&#xF039;</span><span class="icon-name">.fa-align-justify</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-align-left|alinhamento"><span class="icon-font">&#xF036;</span><span class="icon-name">.fa-align-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-align-right|alinhamento"><span class="icon-font">&#xF038;</span><span class="icon-name">.fa-align-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-amazon"><span class="icon-font">&#xF270;</span><span class="icon-name">.fa-amazon</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-ambulance|car|truck"><span class="icon-font">&#xF0F9;</span><span class="icon-name">.fa-ambulance</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-american-sign-language-interpreting"><span class="icon-font">&#xF2A3;</span><span class="icon-name">.fa-american-sign-language-interpreting</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-anchor|ancora"><span class="icon-font">&#xF13D;</span><span class="icon-name">.fa-anchor</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-android"><span class="icon-font">&#xF17B;</span><span class="icon-name">.fa-android</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-angellist|mao|mão"><span class="icon-font">&#xF209;</span><span class="icon-name">.fa-angellist</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-angle-double-down"><span class="icon-font">&#xF103;</span><span class="icon-name">.fa-angle-double-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-angle-double-left"><span class="icon-font">&#xF100;</span><span class="icon-name">.fa-angle-double-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-angle-double-right"><span class="icon-font">&#xF101;</span><span class="icon-name">.fa-angle-double-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-angle-double-up"><span class="icon-font">&#xF102;</span><span class="icon-name">.fa-angle-double-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-angle-down"><span class="icon-font">&#xF107;</span><span class="icon-name">.fa-angle-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-angle-left"><span class="icon-font">&#xF104;</span><span class="icon-name">.fa-angle-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-angle-right"><span class="icon-font">&#xF105;</span><span class="icon-name">.fa-angle-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-angle-up"><span class="icon-font">&#xF106;</span><span class="icon-name">.fa-angle-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-apple"><span class="icon-font">&#xF179;</span><span class="icon-name">.fa-apple</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-archive"><span class="icon-font">&#xF187;</span><span class="icon-name">.fa-archive</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-area-chart"><span class="icon-font">&#xF1FE;</span><span class="icon-name">.fa-area-chart</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrow-circle-down"><span class="icon-font">&#xF0AB;</span><span class="icon-name">.fa-arrow-circle-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrow-circle-left"><span class="icon-font">&#xF0A8;</span><span class="icon-name">.fa-arrow-circle-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrow-circle-o-down"><span class="icon-font">&#xF01A;</span><span class="icon-name">.fa-arrow-circle-o-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrow-circle-o-left"><span class="icon-font">&#xF190;</span><span class="icon-name">.fa-arrow-circle-o-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrow-circle-o-right"><span class="icon-font">&#xF18E;</span><span class="icon-name">.fa-arrow-circle-o-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrow-circle-o-up"><span class="icon-font">&#xF01B;</span><span class="icon-name">.fa-arrow-circle-o-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrow-circle-right"><span class="icon-font">&#xF0A9;</span><span class="icon-name">.fa-arrow-circle-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrow-circle-up"><span class="icon-font">&#xF0AA;</span><span class="icon-name">.fa-arrow-circle-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrow-down"><span class="icon-font">&#xF063;</span><span class="icon-name">.fa-arrow-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrow-left"><span class="icon-font">&#xF060;</span><span class="icon-name">.fa-arrow-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrow-right"><span class="icon-font">&#xF061;</span><span class="icon-name">.fa-arrow-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrow-up"><span class="icon-font">&#xF062;</span><span class="icon-name">.fa-arrow-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrows"><span class="icon-font">&#xF047;</span><span class="icon-name">.fa-arrows</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrows-alt"><span class="icon-font">&#xF0B2;</span><span class="icon-name">.fa-arrows-alt</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrows-h"><span class="icon-font">&#xF07E;</span><span class="icon-name">.fa-arrows-h</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-arrows-v"><span class="icon-font">&#xF07D;</span><span class="icon-name">.fa-arrows-v</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-asl-interpreting"><span class="icon-font">&#xF2A3;</span><span class="icon-name">.fa-asl-interpreting</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-assistive-listening-systems"><span class="icon-font">&#xF2A2;</span><span class="icon-name">.fa-assistive-listening-systems</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-asterisk"><span class="icon-font">&#xF069;</span><span class="icon-name">.fa-asterisk</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-at|arroba"><span class="icon-font">&#xF1FA;</span><span class="icon-name">.fa-at</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-audio-description"><span class="icon-font">&#xF29E;</span><span class="icon-name">.fa-audio-description</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-automobile"><span class="icon-font">&#xF1B9;</span><span class="icon-name">.fa-automobile</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-backward"><span class="icon-font">&#xF04A;</span><span class="icon-name">.fa-backward</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-balance-scale"><span class="icon-font">&#xF24E;</span><span class="icon-name">.fa-balance-scale</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-ban"><span class="icon-font">&#xF05E;</span><span class="icon-name">.fa-ban</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bank"><span class="icon-font">&#xF19C;</span><span class="icon-name">.fa-bank</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bar-chart"><span class="icon-font">&#xF080;</span><span class="icon-name">.fa-bar-chart</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bar-chart-o"><span class="icon-font">&#xF080;</span><span class="icon-name">.fa-bar-chart-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-barcode"><span class="icon-font">&#xF02A;</span><span class="icon-name">.fa-barcode</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bars"><span class="icon-font">&#xF0C9;</span><span class="icon-name">.fa-bars</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-battery-0"><span class="icon-font">&#xF244;</span><span class="icon-name">.fa-battery-0</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-battery-1"><span class="icon-font">&#xF243;</span><span class="icon-name">.fa-battery-1</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-battery-2"><span class="icon-font">&#xF242;</span><span class="icon-name">.fa-battery-2</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-battery-3"><span class="icon-font">&#xF241;</span><span class="icon-name">.fa-battery-3</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-battery-4"><span class="icon-font">&#xF240;</span><span class="icon-name">.fa-battery-4</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-battery-empty"><span class="icon-font">&#xF244;</span><span class="icon-name">.fa-battery-empty</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-battery-full"><span class="icon-font">&#xF240;</span><span class="icon-name">.fa-battery-full</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-battery-half"><span class="icon-font">&#xF242;</span><span class="icon-name">.fa-battery-half</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-battery-quarter"><span class="icon-font">&#xF243;</span><span class="icon-name">.fa-battery-quarter</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-battery-three-quarters"><span class="icon-font">&#xF241;</span><span class="icon-name">.fa-battery-three-quarters</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bed"><span class="icon-font">&#xF236;</span><span class="icon-name">.fa-bed</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-beer"><span class="icon-font">&#xF0FC;</span><span class="icon-name">.fa-beer</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-behance"><span class="icon-font">&#xF1B4;</span><span class="icon-name">.fa-behance</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-behance-square"><span class="icon-font">&#xF1B5;</span><span class="icon-name">.fa-behance-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bell"><span class="icon-font">&#xF0F3;</span><span class="icon-name">.fa-bell</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bell-o"><span class="icon-font">&#xF0A2;</span><span class="icon-name">.fa-bell-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bell-slash"><span class="icon-font">&#xF1F6;</span><span class="icon-name">.fa-bell-slash</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bell-slash-o"><span class="icon-font">&#xF1F7;</span><span class="icon-name">.fa-bell-slash-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bicycle"><span class="icon-font">&#xF206;</span><span class="icon-name">.fa-bicycle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-binoculars"><span class="icon-font">&#xF1E5;</span><span class="icon-name">.fa-binoculars</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-birthday-cake"><span class="icon-font">&#xF1FD;</span><span class="icon-name">.fa-birthday-cake</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bitbucket"><span class="icon-font">&#xF171;</span><span class="icon-name">.fa-bitbucket</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bitbucket-square"><span class="icon-font">&#xF172;</span><span class="icon-name">.fa-bitbucket-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bitcoin"><span class="icon-font">&#xF15A;</span><span class="icon-name">.fa-bitcoin</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-black-tie"><span class="icon-font">&#xF27E;</span><span class="icon-name">.fa-black-tie</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-blind"><span class="icon-font">&#xF29D;</span><span class="icon-name">.fa-blind</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bluetooth"><span class="icon-font">&#xF293;</span><span class="icon-name">.fa-bluetooth</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bluetooth-b"><span class="icon-font">&#xF294;</span><span class="icon-name">.fa-bluetooth-b</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bold"><span class="icon-font">&#xF032;</span><span class="icon-name">.fa-bold</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bolt"><span class="icon-font">&#xF0E7;</span><span class="icon-name">.fa-bolt</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bomb"><span class="icon-font">&#xF1E2;</span><span class="icon-name">.fa-bomb</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-book"><span class="icon-font">&#xF02D;</span><span class="icon-name">.fa-book</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bookmark"><span class="icon-font">&#xF02E;</span><span class="icon-name">.fa-bookmark</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bookmark-o"><span class="icon-font">&#xF097;</span><span class="icon-name">.fa-bookmark-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-braille"><span class="icon-font">&#xF2A1;</span><span class="icon-name">.fa-braille</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-briefcase"><span class="icon-font">&#xF0B1;</span><span class="icon-name">.fa-briefcase</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-btc"><span class="icon-font">&#xF15A;</span><span class="icon-name">.fa-btc</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bug"><span class="icon-font">&#xF188;</span><span class="icon-name">.fa-bug</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-building"><span class="icon-font">&#xF1AD;</span><span class="icon-name">.fa-building</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-building-o"><span class="icon-font">&#xF0F7;</span><span class="icon-name">.fa-building-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bullhorn"><span class="icon-font">&#xF0A1;</span><span class="icon-name">.fa-bullhorn</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bullseye"><span class="icon-font">&#xF140;</span><span class="icon-name">.fa-bullseye</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-bus"><span class="icon-font">&#xF207;</span><span class="icon-name">.fa-bus</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-buysellads"><span class="icon-font">&#xF20D;</span><span class="icon-name">.fa-buysellads</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cab"><span class="icon-font">&#xF1BA;</span><span class="icon-name">.fa-cab</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-calculator"><span class="icon-font">&#xF1EC;</span><span class="icon-name">.fa-calculator</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-calendar"><span class="icon-font">&#xF073;</span><span class="icon-name">.fa-calendar</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-calendar-check-o"><span class="icon-font">&#xF274;</span><span class="icon-name">.fa-calendar-check-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-calendar-minus-o"><span class="icon-font">&#xF272;</span><span class="icon-name">.fa-calendar-minus-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-calendar-o"><span class="icon-font">&#xF133;</span><span class="icon-name">.fa-calendar-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-calendar-plus-o"><span class="icon-font">&#xF271;</span><span class="icon-name">.fa-calendar-plus-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-calendar-times-o"><span class="icon-font">&#xF273;</span><span class="icon-name">.fa-calendar-times-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-camera"><span class="icon-font">&#xF030;</span><span class="icon-name">.fa-camera</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-camera-retro"><span class="icon-font">&#xF083;</span><span class="icon-name">.fa-camera-retro</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-car"><span class="icon-font">&#xF1B9;</span><span class="icon-name">.fa-car</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-caret-down"><span class="icon-font">&#xF0D7;</span><span class="icon-name">.fa-caret-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-caret-left"><span class="icon-font">&#xF0D9;</span><span class="icon-name">.fa-caret-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-caret-right"><span class="icon-font">&#xF0DA;</span><span class="icon-name">.fa-caret-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-caret-square-o-down"><span class="icon-font">&#xF150;</span><span class="icon-name">.fa-caret-square-o-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-caret-square-o-left"><span class="icon-font">&#xF191;</span><span class="icon-name">.fa-caret-square-o-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-caret-square-o-right"><span class="icon-font">&#xF152;</span><span class="icon-name">.fa-caret-square-o-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-caret-square-o-up"><span class="icon-font">&#xF151;</span><span class="icon-name">.fa-caret-square-o-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-caret-up"><span class="icon-font">&#xF0D8;</span><span class="icon-name">.fa-caret-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cart-arrow-down"><span class="icon-font">&#xF218;</span><span class="icon-name">.fa-cart-arrow-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cart-plus"><span class="icon-font">&#xF217;</span><span class="icon-name">.fa-cart-plus</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cc"><span class="icon-font">&#xF20A;</span><span class="icon-name">.fa-cc</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cc-amex"><span class="icon-font">&#xF1F3;</span><span class="icon-name">.fa-cc-amex</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cc-diners-club"><span class="icon-font">&#xF24C;</span><span class="icon-name">.fa-cc-diners-club</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cc-discover"><span class="icon-font">&#xF1F2;</span><span class="icon-name">.fa-cc-discover</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cc-jcb"><span class="icon-font">&#xF24B;</span><span class="icon-name">.fa-cc-jcb</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cc-mastercard"><span class="icon-font">&#xF1F1;</span><span class="icon-name">.fa-cc-mastercard</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cc-paypal"><span class="icon-font">&#xF1F4;</span><span class="icon-name">.fa-cc-paypal</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cc-stripe"><span class="icon-font">&#xF1F5;</span><span class="icon-name">.fa-cc-stripe</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cc-visa"><span class="icon-font">&#xF1F0;</span><span class="icon-name">.fa-cc-visa</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-certificate"><span class="icon-font">&#xF0A3;</span><span class="icon-name">.fa-certificate</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-chain"><span class="icon-font">&#xF0C1;</span><span class="icon-name">.fa-chain</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-chain-broken"><span class="icon-font">&#xF127;</span><span class="icon-name">.fa-chain-broken</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-check"><span class="icon-font">&#xF00C;</span><span class="icon-name">.fa-check</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-check-circle"><span class="icon-font">&#xF058;</span><span class="icon-name">.fa-check-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-check-circle-o"><span class="icon-font">&#xF05D;</span><span class="icon-name">.fa-check-circle-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-check-square"><span class="icon-font">&#xF14A;</span><span class="icon-name">.fa-check-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-check-square-o"><span class="icon-font">&#xF046;</span><span class="icon-name">.fa-check-square-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-chevron-circle-down"><span class="icon-font">&#xF13A;</span><span class="icon-name">.fa-chevron-circle-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-chevron-circle-left"><span class="icon-font">&#xF137;</span><span class="icon-name">.fa-chevron-circle-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-chevron-circle-right"><span class="icon-font">&#xF138;</span><span class="icon-name">.fa-chevron-circle-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-chevron-circle-up"><span class="icon-font">&#xF139;</span><span class="icon-name">.fa-chevron-circle-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-chevron-down"><span class="icon-font">&#xF078;</span><span class="icon-name">.fa-chevron-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-chevron-left"><span class="icon-font">&#xF053;</span><span class="icon-name">.fa-chevron-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-chevron-right"><span class="icon-font">&#xF054;</span><span class="icon-name">.fa-chevron-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-chevron-up"><span class="icon-font">&#xF077;</span><span class="icon-name">.fa-chevron-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-child"><span class="icon-font">&#xF1AE;</span><span class="icon-name">.fa-child</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-chrome"><span class="icon-font">&#xF268;</span><span class="icon-name">.fa-chrome</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-circle"><span class="icon-font">&#xF111;</span><span class="icon-name">.fa-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-circle-o"><span class="icon-font">&#xF10C;</span><span class="icon-name">.fa-circle-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-circle-o-notch"><span class="icon-font">&#xF1CE;</span><span class="icon-name">.fa-circle-o-notch</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-circle-thin"><span class="icon-font">&#xF1DB;</span><span class="icon-name">.fa-circle-thin</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-clipboard"><span class="icon-font">&#xF0EA;</span><span class="icon-name">.fa-clipboard</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-clock-o"><span class="icon-font">&#xF017;</span><span class="icon-name">.fa-clock-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-clone"><span class="icon-font">&#xF24D;</span><span class="icon-name">.fa-clone</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-close"><span class="icon-font">&#xF00D;</span><span class="icon-name">.fa-close</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cloud"><span class="icon-font">&#xF0C2;</span><span class="icon-name">.fa-cloud</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cloud-download"><span class="icon-font">&#xF0ED;</span><span class="icon-name">.fa-cloud-download</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cloud-upload"><span class="icon-font">&#xF0EE;</span><span class="icon-name">.fa-cloud-upload</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cny"><span class="icon-font">&#xF157;</span><span class="icon-name">.fa-cny</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-code"><span class="icon-font">&#xF121;</span><span class="icon-name">.fa-code</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-code-fork"><span class="icon-font">&#xF126;</span><span class="icon-name">.fa-code-fork</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-codepen"><span class="icon-font">&#xF1CB;</span><span class="icon-name">.fa-codepen</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-codiepie"><span class="icon-font">&#xF284;</span><span class="icon-name">.fa-codiepie</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-coffee"><span class="icon-font">&#xF0F4;</span><span class="icon-name">.fa-coffee</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cog"><span class="icon-font">&#xF013;</span><span class="icon-name">.fa-cog</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cogs"><span class="icon-font">&#xF085;</span><span class="icon-name">.fa-cogs</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-columns"><span class="icon-font">&#xF0DB;</span><span class="icon-name">.fa-columns</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-comment"><span class="icon-font">&#xF075;</span><span class="icon-name">.fa-comment</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-comment-o"><span class="icon-font">&#xF0E5;</span><span class="icon-name">.fa-comment-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-commenting"><span class="icon-font">&#xF27A;</span><span class="icon-name">.fa-commenting</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-commenting-o"><span class="icon-font">&#xF27B;</span><span class="icon-name">.fa-commenting-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-comments"><span class="icon-font">&#xF086;</span><span class="icon-name">.fa-comments</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-comments-o"><span class="icon-font">&#xF0E6;</span><span class="icon-name">.fa-comments-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-compass"><span class="icon-font">&#xF14E;</span><span class="icon-name">.fa-compass</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-compress"><span class="icon-font">&#xF066;</span><span class="icon-name">.fa-compress</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-connectdevelop"><span class="icon-font">&#xF20E;</span><span class="icon-name">.fa-connectdevelop</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-contao"><span class="icon-font">&#xF26D;</span><span class="icon-name">.fa-contao</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-copy"><span class="icon-font">&#xF0C5;</span><span class="icon-name">.fa-copy</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-copyright"><span class="icon-font">&#xF1F9;</span><span class="icon-name">.fa-copyright</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-creative-commons"><span class="icon-font">&#xF25E;</span><span class="icon-name">.fa-creative-commons</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-credit-card"><span class="icon-font">&#xF09D;</span><span class="icon-name">.fa-credit-card</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-credit-card-alt"><span class="icon-font">&#xF283;</span><span class="icon-name">.fa-credit-card-alt</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-crop"><span class="icon-font">&#xF125;</span><span class="icon-name">.fa-crop</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-crosshairs"><span class="icon-font">&#xF05B;</span><span class="icon-name">.fa-crosshairs</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-css3"><span class="icon-font">&#xF13C;</span><span class="icon-name">.fa-css3</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cube"><span class="icon-font">&#xF1B2;</span><span class="icon-name">.fa-cube</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cubes"><span class="icon-font">&#xF1B3;</span><span class="icon-name">.fa-cubes</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cut"><span class="icon-font">&#xF0C4;</span><span class="icon-name">.fa-cut</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-cutlery"><span class="icon-font">&#xF0F5;</span><span class="icon-name">.fa-cutlery</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-dashboard"><span class="icon-font">&#xF0E4;</span><span class="icon-name">.fa-dashboard</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-dashcube"><span class="icon-font">&#xF210;</span><span class="icon-name">.fa-dashcube</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-database"><span class="icon-font">&#xF1C0;</span><span class="icon-name">.fa-database</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-deaf"><span class="icon-font">&#xF2A4;</span><span class="icon-name">.fa-deaf</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-deafness"><span class="icon-font">&#xF2A4;</span><span class="icon-name">.fa-deafness</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-dedent"><span class="icon-font">&#xF03B;</span><span class="icon-name">.fa-dedent</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-delicious"><span class="icon-font">&#xF1A5;</span><span class="icon-name">.fa-delicious</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-desktop"><span class="icon-font">&#xF108;</span><span class="icon-name">.fa-desktop</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-deviantart"><span class="icon-font">&#xF1BD;</span><span class="icon-name">.fa-deviantart</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-diamond"><span class="icon-font">&#xF219;</span><span class="icon-name">.fa-diamond</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-digg"><span class="icon-font">&#xF1A6;</span><span class="icon-name">.fa-digg</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-dollar"><span class="icon-font">&#xF155;</span><span class="icon-name">.fa-dollar</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-dot-circle-o"><span class="icon-font">&#xF192;</span><span class="icon-name">.fa-dot-circle-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-download"><span class="icon-font">&#xF019;</span><span class="icon-name">.fa-download</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-dribbble"><span class="icon-font">&#xF17D;</span><span class="icon-name">.fa-dribbble</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-dropbox"><span class="icon-font">&#xF16B;</span><span class="icon-name">.fa-dropbox</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-drupal"><span class="icon-font">&#xF1A9;</span><span class="icon-name">.fa-drupal</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-edge"><span class="icon-font">&#xF282;</span><span class="icon-name">.fa-edge</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-edit"><span class="icon-font">&#xF044;</span><span class="icon-name">.fa-edit</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-eject"><span class="icon-font">&#xF052;</span><span class="icon-name">.fa-eject</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-ellipsis-h"><span class="icon-font">&#xF141;</span><span class="icon-name">.fa-ellipsis-h</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-ellipsis-v"><span class="icon-font">&#xF142;</span><span class="icon-name">.fa-ellipsis-v</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-empire"><span class="icon-font">&#xF1D1;</span><span class="icon-name">.fa-empire</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-envelope"><span class="icon-font">&#xF0E0;</span><span class="icon-name">.fa-envelope</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-envelope-o"><span class="icon-font">&#xF003;</span><span class="icon-name">.fa-envelope-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-envelope-square"><span class="icon-font">&#xF199;</span><span class="icon-name">.fa-envelope-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-envira"><span class="icon-font">&#xF299;</span><span class="icon-name">.fa-envira</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-eraser"><span class="icon-font">&#xF12D;</span><span class="icon-name">.fa-eraser</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-eur"><span class="icon-font">&#xF153;</span><span class="icon-name">.fa-eur</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-euro"><span class="icon-font">&#xF153;</span><span class="icon-name">.fa-euro</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-exchange"><span class="icon-font">&#xF0EC;</span><span class="icon-name">.fa-exchange</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-exclamation"><span class="icon-font">&#xF12A;</span><span class="icon-name">.fa-exclamation</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-exclamation-circle"><span class="icon-font">&#xF06A;</span><span class="icon-name">.fa-exclamation-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-exclamation-triangle"><span class="icon-font">&#xF071;</span><span class="icon-name">.fa-exclamation-triangle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-expand"><span class="icon-font">&#xF065;</span><span class="icon-name">.fa-expand</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-expeditedssl"><span class="icon-font">&#xF23E;</span><span class="icon-name">.fa-expeditedssl</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-external-link"><span class="icon-font">&#xF08E;</span><span class="icon-name">.fa-external-link</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-external-link-square"><span class="icon-font">&#xF14C;</span><span class="icon-name">.fa-external-link-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-eye"><span class="icon-font">&#xF06E;</span><span class="icon-name">.fa-eye</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-eye-slash"><span class="icon-font">&#xF070;</span><span class="icon-name">.fa-eye-slash</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-eyedropper"><span class="icon-font">&#xF1FB;</span><span class="icon-name">.fa-eyedropper</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-facebook"><span class="icon-font">&#xF09A;</span><span class="icon-name">.fa-facebook</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-facebook-f"><span class="icon-font">&#xF09A;</span><span class="icon-name">.fa-facebook-f</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-facebook-official"><span class="icon-font">&#xF230;</span><span class="icon-name">.fa-facebook-official</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-facebook-square"><span class="icon-font">&#xF082;</span><span class="icon-name">.fa-facebook-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-fast-backward"><span class="icon-font">&#xF049;</span><span class="icon-name">.fa-fast-backward</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-fast-forward"><span class="icon-font">&#xF050;</span><span class="icon-name">.fa-fast-forward</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-fax"><span class="icon-font">&#xF1AC;</span><span class="icon-name">.fa-fax</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-feed"><span class="icon-font">&#xF09E;</span><span class="icon-name">.fa-feed</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-female"><span class="icon-font">&#xF182;</span><span class="icon-name">.fa-female</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-fighter-jet"><span class="icon-font">&#xF0FB;</span><span class="icon-name">.fa-fighter-jet</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file"><span class="icon-font">&#xF15B;</span><span class="icon-name">.fa-file</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-archive-o"><span class="icon-font">&#xF1C6;</span><span class="icon-name">.fa-file-archive-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-audio-o"><span class="icon-font">&#xF1C7;</span><span class="icon-name">.fa-file-audio-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-code-o"><span class="icon-font">&#xF1C9;</span><span class="icon-name">.fa-file-code-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-excel-o"><span class="icon-font">&#xF1C3;</span><span class="icon-name">.fa-file-excel-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-image-o"><span class="icon-font">&#xF1C5;</span><span class="icon-name">.fa-file-image-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-movie-o"><span class="icon-font">&#xF1C8;</span><span class="icon-name">.fa-file-movie-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-o"><span class="icon-font">&#xF016;</span><span class="icon-name">.fa-file-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-pdf-o"><span class="icon-font">&#xF1C1;</span><span class="icon-name">.fa-file-pdf-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-photo-o"><span class="icon-font">&#xF1C5;</span><span class="icon-name">.fa-file-photo-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-picture-o"><span class="icon-font">&#xF1C5;</span><span class="icon-name">.fa-file-picture-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-powerpoint-o"><span class="icon-font">&#xF1C4;</span><span class="icon-name">.fa-file-powerpoint-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-sound-o"><span class="icon-font">&#xF1C7;</span><span class="icon-name">.fa-file-sound-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-text"><span class="icon-font">&#xF15C;</span><span class="icon-name">.fa-file-text</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-text-o"><span class="icon-font">&#xF0F6;</span><span class="icon-name">.fa-file-text-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-video-o"><span class="icon-font">&#xF1C8;</span><span class="icon-name">.fa-file-video-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-word-o"><span class="icon-font">&#xF1C2;</span><span class="icon-name">.fa-file-word-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-file-zip-o"><span class="icon-font">&#xF1C6;</span><span class="icon-name">.fa-file-zip-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-files-o"><span class="icon-font">&#xF0C5;</span><span class="icon-name">.fa-files-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-film"><span class="icon-font">&#xF008;</span><span class="icon-name">.fa-film</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-filter"><span class="icon-font">&#xF0B0;</span><span class="icon-name">.fa-filter</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-fire"><span class="icon-font">&#xF06D;</span><span class="icon-name">.fa-fire</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-fire-extinguisher"><span class="icon-font">&#xF134;</span><span class="icon-name">.fa-fire-extinguisher</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-firefox"><span class="icon-font">&#xF269;</span><span class="icon-name">.fa-firefox</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-flag"><span class="icon-font">&#xF024;</span><span class="icon-name">.fa-flag</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-flag-checkered"><span class="icon-font">&#xF11E;</span><span class="icon-name">.fa-flag-checkered</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-flag-o"><span class="icon-font">&#xF11D;</span><span class="icon-name">.fa-flag-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-flash"><span class="icon-font">&#xF0E7;</span><span class="icon-name">.fa-flash</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-flask"><span class="icon-font">&#xF0C3;</span><span class="icon-name">.fa-flask</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-flickr"><span class="icon-font">&#xF16E;</span><span class="icon-name">.fa-flickr</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-floppy-o"><span class="icon-font">&#xF0C7;</span><span class="icon-name">.fa-floppy-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-folder"><span class="icon-font">&#xF07B;</span><span class="icon-name">.fa-folder</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-folder-o"><span class="icon-font">&#xF114;</span><span class="icon-name">.fa-folder-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-folder-open"><span class="icon-font">&#xF07C;</span><span class="icon-name">.fa-folder-open</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-folder-open-o"><span class="icon-font">&#xF115;</span><span class="icon-name">.fa-folder-open-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-font"><span class="icon-font">&#xF031;</span><span class="icon-name">.fa-font</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-fonticons"><span class="icon-font">&#xF280;</span><span class="icon-name">.fa-fonticons</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-fort-awesome"><span class="icon-font">&#xF286;</span><span class="icon-name">.fa-fort-awesome</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-forumbee"><span class="icon-font">&#xF211;</span><span class="icon-name">.fa-forumbee</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-forward"><span class="icon-font">&#xF04E;</span><span class="icon-name">.fa-forward</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-foursquare"><span class="icon-font">&#xF180;</span><span class="icon-name">.fa-foursquare</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-frown-o"><span class="icon-font">&#xF119;</span><span class="icon-name">.fa-frown-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-futbol-o"><span class="icon-font">&#xF1E3;</span><span class="icon-name">.fa-futbol-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-gamepad"><span class="icon-font">&#xF11B;</span><span class="icon-name">.fa-gamepad</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-gavel"><span class="icon-font">&#xF0E3;</span><span class="icon-name">.fa-gavel</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-gbp"><span class="icon-font">&#xF154;</span><span class="icon-name">.fa-gbp</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-ge"><span class="icon-font">&#xF1D1;</span><span class="icon-name">.fa-ge</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-gear"><span class="icon-font">&#xF013;</span><span class="icon-name">.fa-gear</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-gears"><span class="icon-font">&#xF085;</span><span class="icon-name">.fa-gears</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-genderless"><span class="icon-font">&#xF22D;</span><span class="icon-name">.fa-genderless</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-get-pocket"><span class="icon-font">&#xF265;</span><span class="icon-name">.fa-get-pocket</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-gg"><span class="icon-font">&#xF260;</span><span class="icon-name">.fa-gg</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-gg-circle"><span class="icon-font">&#xF261;</span><span class="icon-name">.fa-gg-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-gift"><span class="icon-font">&#xF06B;</span><span class="icon-name">.fa-gift</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-git"><span class="icon-font">&#xF1D3;</span><span class="icon-name">.fa-git</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-git-square"><span class="icon-font">&#xF1D2;</span><span class="icon-name">.fa-git-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-github"><span class="icon-font">&#xF09B;</span><span class="icon-name">.fa-github</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-github-alt"><span class="icon-font">&#xF113;</span><span class="icon-name">.fa-github-alt</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-github-square"><span class="icon-font">&#xF092;</span><span class="icon-name">.fa-github-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-gitlab"><span class="icon-font">&#xF296;</span><span class="icon-name">.fa-gitlab</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-gittip"><span class="icon-font">&#xF184;</span><span class="icon-name">.fa-gittip</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-glass"><span class="icon-font">&#xF000;</span><span class="icon-name">.fa-glass</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-glide"><span class="icon-font">&#xF2A5;</span><span class="icon-name">.fa-glide</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-glide-g"><span class="icon-font">&#xF2A6;</span><span class="icon-name">.fa-glide-g</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-globe"><span class="icon-font">&#xF0AC;</span><span class="icon-name">.fa-globe</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-google"><span class="icon-font">&#xF1A0;</span><span class="icon-name">.fa-google</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-google-plus"><span class="icon-font">&#xF0D5;</span><span class="icon-name">.fa-google-plus</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-google-plus-square"><span class="icon-font">&#xF0D4;</span><span class="icon-name">.fa-google-plus-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-google-wallet"><span class="icon-font">&#xF1EE;</span><span class="icon-name">.fa-google-wallet</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-graduation-cap"><span class="icon-font">&#xF19D;</span><span class="icon-name">.fa-graduation-cap</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-gratipay"><span class="icon-font">&#xF184;</span><span class="icon-name">.fa-gratipay</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-group"><span class="icon-font">&#xF0C0;</span><span class="icon-name">.fa-group</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-h-square"><span class="icon-font">&#xF0FD;</span><span class="icon-name">.fa-h-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hacker-news"><span class="icon-font">&#xF1D4;</span><span class="icon-name">.fa-hacker-news</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-grab-o"><span class="icon-font">&#xF255;</span><span class="icon-name">.fa-hand-grab-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-lizard-o"><span class="icon-font">&#xF258;</span><span class="icon-name">.fa-hand-lizard-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-o-down"><span class="icon-font">&#xF0A7;</span><span class="icon-name">.fa-hand-o-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-o-left"><span class="icon-font">&#xF0A5;</span><span class="icon-name">.fa-hand-o-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-o-right"><span class="icon-font">&#xF0A4;</span><span class="icon-name">.fa-hand-o-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-o-up"><span class="icon-font">&#xF0A6;</span><span class="icon-name">.fa-hand-o-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-paper-o"><span class="icon-font">&#xF256;</span><span class="icon-name">.fa-hand-paper-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-peace-o"><span class="icon-font">&#xF25B;</span><span class="icon-name">.fa-hand-peace-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-pointer-o"><span class="icon-font">&#xF25A;</span><span class="icon-name">.fa-hand-pointer-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-rock-o"><span class="icon-font">&#xF255;</span><span class="icon-name">.fa-hand-rock-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-scissors-o"><span class="icon-font">&#xF257;</span><span class="icon-name">.fa-hand-scissors-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-spock-o"><span class="icon-font">&#xF259;</span><span class="icon-name">.fa-hand-spock-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hand-stop-o"><span class="icon-font">&#xF256;</span><span class="icon-name">.fa-hand-stop-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hard-of-hearing"><span class="icon-font">&#xF2A4;</span><span class="icon-name">.fa-hard-of-hearing</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hashtag"><span class="icon-font">&#xF292;</span><span class="icon-name">.fa-hashtag</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hdd-o"><span class="icon-font">&#xF0A0;</span><span class="icon-name">.fa-hdd-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-header"><span class="icon-font">&#xF1DC;</span><span class="icon-name">.fa-header</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-headphones"><span class="icon-font">&#xF025;</span><span class="icon-name">.fa-headphones</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-heart"><span class="icon-font">&#xF004;</span><span class="icon-name">.fa-heart</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-heart-o"><span class="icon-font">&#xF08A;</span><span class="icon-name">.fa-heart-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-heartbeat"><span class="icon-font">&#xF21E;</span><span class="icon-name">.fa-heartbeat</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-history"><span class="icon-font">&#xF1DA;</span><span class="icon-name">.fa-history</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-home"><span class="icon-font">&#xF015;</span><span class="icon-name">.fa-home</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hospital-o"><span class="icon-font">&#xF0F8;</span><span class="icon-name">.fa-hospital-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hotel"><span class="icon-font">&#xF236;</span><span class="icon-name">.fa-hotel</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hourglass"><span class="icon-font">&#xF254;</span><span class="icon-name">.fa-hourglass</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hourglass-1"><span class="icon-font">&#xF251;</span><span class="icon-name">.fa-hourglass-1</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hourglass-2"><span class="icon-font">&#xF252;</span><span class="icon-name">.fa-hourglass-2</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hourglass-3"><span class="icon-font">&#xF253;</span><span class="icon-name">.fa-hourglass-3</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hourglass-end"><span class="icon-font">&#xF253;</span><span class="icon-name">.fa-hourglass-end</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hourglass-half"><span class="icon-font">&#xF252;</span><span class="icon-name">.fa-hourglass-half</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hourglass-o"><span class="icon-font">&#xF250;</span><span class="icon-name">.fa-hourglass-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-hourglass-start"><span class="icon-font">&#xF251;</span><span class="icon-name">.fa-hourglass-start</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-houzz"><span class="icon-font">&#xF27C;</span><span class="icon-name">.fa-houzz</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-html5"><span class="icon-font">&#xF13B;</span><span class="icon-name">.fa-html5</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-i-cursor"><span class="icon-font">&#xF246;</span><span class="icon-name">.fa-i-cursor</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-ils"><span class="icon-font">&#xF20B;</span><span class="icon-name">.fa-ils</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-image"><span class="icon-font">&#xF03E;</span><span class="icon-name">.fa-image</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-inbox"><span class="icon-font">&#xF01C;</span><span class="icon-name">.fa-inbox</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-indent"><span class="icon-font">&#xF03C;</span><span class="icon-name">.fa-indent</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-industry"><span class="icon-font">&#xF275;</span><span class="icon-name">.fa-industry</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-info"><span class="icon-font">&#xF129;</span><span class="icon-name">.fa-info</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-info-circle"><span class="icon-font">&#xF05A;</span><span class="icon-name">.fa-info-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-inr"><span class="icon-font">&#xF156;</span><span class="icon-name">.fa-inr</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-instagram"><span class="icon-font">&#xF16D;</span><span class="icon-name">.fa-instagram</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-institution"><span class="icon-font">&#xF19C;</span><span class="icon-name">.fa-institution</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-internet-explorer"><span class="icon-font">&#xF26B;</span><span class="icon-name">.fa-internet-explorer</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-intersex"><span class="icon-font">&#xF224;</span><span class="icon-name">.fa-intersex</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-ioxhost"><span class="icon-font">&#xF208;</span><span class="icon-name">.fa-ioxhost</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-italic"><span class="icon-font">&#xF033;</span><span class="icon-name">.fa-italic</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-joomla"><span class="icon-font">&#xF1AA;</span><span class="icon-name">.fa-joomla</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-jpy"><span class="icon-font">&#xF157;</span><span class="icon-name">.fa-jpy</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-jsfiddle"><span class="icon-font">&#xF1CC;</span><span class="icon-name">.fa-jsfiddle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-key"><span class="icon-font">&#xF084;</span><span class="icon-name">.fa-key</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-keyboard-o"><span class="icon-font">&#xF11C;</span><span class="icon-name">.fa-keyboard-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-krw"><span class="icon-font">&#xF159;</span><span class="icon-name">.fa-krw</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-language"><span class="icon-font">&#xF1AB;</span><span class="icon-name">.fa-language</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-laptop"><span class="icon-font">&#xF109;</span><span class="icon-name">.fa-laptop</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-lastfm"><span class="icon-font">&#xF202;</span><span class="icon-name">.fa-lastfm</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-lastfm-square"><span class="icon-font">&#xF203;</span><span class="icon-name">.fa-lastfm-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-leaf"><span class="icon-font">&#xF06C;</span><span class="icon-name">.fa-leaf</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-leanpub"><span class="icon-font">&#xF212;</span><span class="icon-name">.fa-leanpub</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-legal"><span class="icon-font">&#xF0E3;</span><span class="icon-name">.fa-legal</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-lemon-o"><span class="icon-font">&#xF094;</span><span class="icon-name">.fa-lemon-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-level-down"><span class="icon-font">&#xF149;</span><span class="icon-name">.fa-level-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-level-up"><span class="icon-font">&#xF148;</span><span class="icon-name">.fa-level-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-life-bouy"><span class="icon-font">&#xF1CD;</span><span class="icon-name">.fa-life-bouy</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-life-buoy"><span class="icon-font">&#xF1CD;</span><span class="icon-name">.fa-life-buoy</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-life-ring"><span class="icon-font">&#xF1CD;</span><span class="icon-name">.fa-life-ring</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-life-saver"><span class="icon-font">&#xF1CD;</span><span class="icon-name">.fa-life-saver</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-lightbulb-o"><span class="icon-font">&#xF0EB;</span><span class="icon-name">.fa-lightbulb-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-line-chart"><span class="icon-font">&#xF201;</span><span class="icon-name">.fa-line-chart</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-link"><span class="icon-font">&#xF0C1;</span><span class="icon-name">.fa-link</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-linkedin"><span class="icon-font">&#xF0E1;</span><span class="icon-name">.fa-linkedin</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-linkedin-square"><span class="icon-font">&#xF08C;</span><span class="icon-name">.fa-linkedin-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-linux"><span class="icon-font">&#xF17C;</span><span class="icon-name">.fa-linux</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-list"><span class="icon-font">&#xF03A;</span><span class="icon-name">.fa-list</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-list-alt"><span class="icon-font">&#xF022;</span><span class="icon-name">.fa-list-alt</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-list-ol"><span class="icon-font">&#xF0CB;</span><span class="icon-name">.fa-list-ol</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-list-ul"><span class="icon-font">&#xF0CA;</span><span class="icon-name">.fa-list-ul</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-location-arrow"><span class="icon-font">&#xF124;</span><span class="icon-name">.fa-location-arrow</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-lock"><span class="icon-font">&#xF023;</span><span class="icon-name">.fa-lock</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-long-arrow-down"><span class="icon-font">&#xF175;</span><span class="icon-name">.fa-long-arrow-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-long-arrow-left"><span class="icon-font">&#xF177;</span><span class="icon-name">.fa-long-arrow-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-long-arrow-right"><span class="icon-font">&#xF178;</span><span class="icon-name">.fa-long-arrow-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-long-arrow-up"><span class="icon-font">&#xF176;</span><span class="icon-name">.fa-long-arrow-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-low-vision"><span class="icon-font">&#xF2A8;</span><span class="icon-name">.fa-low-vision</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-magic"><span class="icon-font">&#xF0D0;</span><span class="icon-name">.fa-magic</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-magnet"><span class="icon-font">&#xF076;</span><span class="icon-name">.fa-magnet</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mail-forward"><span class="icon-font">&#xF064;</span><span class="icon-name">.fa-mail-forward</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mail-reply"><span class="icon-font">&#xF112;</span><span class="icon-name">.fa-mail-reply</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mail-reply-all"><span class="icon-font">&#xF122;</span><span class="icon-name">.fa-mail-reply-all</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-male"><span class="icon-font">&#xF183;</span><span class="icon-name">.fa-male</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-map"><span class="icon-font">&#xF279;</span><span class="icon-name">.fa-map</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-map-marker"><span class="icon-font">&#xF041;</span><span class="icon-name">.fa-map-marker</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-map-o"><span class="icon-font">&#xF278;</span><span class="icon-name">.fa-map-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-map-pin"><span class="icon-font">&#xF276;</span><span class="icon-name">.fa-map-pin</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-map-signs"><span class="icon-font">&#xF277;</span><span class="icon-name">.fa-map-signs</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mars"><span class="icon-font">&#xF222;</span><span class="icon-name">.fa-mars</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mars-double"><span class="icon-font">&#xF227;</span><span class="icon-name">.fa-mars-double</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mars-stroke"><span class="icon-font">&#xF229;</span><span class="icon-name">.fa-mars-stroke</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mars-stroke-h"><span class="icon-font">&#xF22B;</span><span class="icon-name">.fa-mars-stroke-h</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mars-stroke-v"><span class="icon-font">&#xF22A;</span><span class="icon-name">.fa-mars-stroke-v</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-maxcdn"><span class="icon-font">&#xF136;</span><span class="icon-name">.fa-maxcdn</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-meanpath"><span class="icon-font">&#xF20C;</span><span class="icon-name">.fa-meanpath</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-medium"><span class="icon-font">&#xF23A;</span><span class="icon-name">.fa-medium</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-medkit"><span class="icon-font">&#xF0FA;</span><span class="icon-name">.fa-medkit</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-meh-o"><span class="icon-font">&#xF11A;</span><span class="icon-name">.fa-meh-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mercury"><span class="icon-font">&#xF223;</span><span class="icon-name">.fa-mercury</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-microphone"><span class="icon-font">&#xF130;</span><span class="icon-name">.fa-microphone</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-microphone-slash"><span class="icon-font">&#xF131;</span><span class="icon-name">.fa-microphone-slash</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-minus"><span class="icon-font">&#xF068;</span><span class="icon-name">.fa-minus</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-minus-circle"><span class="icon-font">&#xF056;</span><span class="icon-name">.fa-minus-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-minus-square"><span class="icon-font">&#xF146;</span><span class="icon-name">.fa-minus-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-minus-square-o"><span class="icon-font">&#xF147;</span><span class="icon-name">.fa-minus-square-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mixcloud"><span class="icon-font">&#xF289;</span><span class="icon-name">.fa-mixcloud</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mobile"><span class="icon-font">&#xF10B;</span><span class="icon-name">.fa-mobile</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mobile-phone"><span class="icon-font">&#xF10B;</span><span class="icon-name">.fa-mobile-phone</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-modx"><span class="icon-font">&#xF285;</span><span class="icon-name">.fa-modx</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-money"><span class="icon-font">&#xF0D6;</span><span class="icon-name">.fa-money</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-moon-o"><span class="icon-font">&#xF186;</span><span class="icon-name">.fa-moon-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mortar-board"><span class="icon-font">&#xF19D;</span><span class="icon-name">.fa-mortar-board</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-motorcycle"><span class="icon-font">&#xF21C;</span><span class="icon-name">.fa-motorcycle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-mouse-pointer"><span class="icon-font">&#xF245;</span><span class="icon-name">.fa-mouse-pointer</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-music"><span class="icon-font">&#xF001;</span><span class="icon-name">.fa-music</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-navicon"><span class="icon-font">&#xF0C9;</span><span class="icon-name">.fa-navicon</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-neuter"><span class="icon-font">&#xF22C;</span><span class="icon-name">.fa-neuter</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-newspaper-o"><span class="icon-font">&#xF1EA;</span><span class="icon-name">.fa-newspaper-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-object-group"><span class="icon-font">&#xF247;</span><span class="icon-name">.fa-object-group</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-object-ungroup"><span class="icon-font">&#xF248;</span><span class="icon-name">.fa-object-ungroup</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-odnoklassniki"><span class="icon-font">&#xF263;</span><span class="icon-name">.fa-odnoklassniki</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-odnoklassniki-square"><span class="icon-font">&#xF264;</span><span class="icon-name">.fa-odnoklassniki-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-opencart"><span class="icon-font">&#xF23D;</span><span class="icon-name">.fa-opencart</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-openid"><span class="icon-font">&#xF19B;</span><span class="icon-name">.fa-openid</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-opera"><span class="icon-font">&#xF26A;</span><span class="icon-name">.fa-opera</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-optin-monster"><span class="icon-font">&#xF23C;</span><span class="icon-name">.fa-optin-monster</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-outdent"><span class="icon-font">&#xF03B;</span><span class="icon-name">.fa-outdent</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pagelines"><span class="icon-font">&#xF18C;</span><span class="icon-name">.fa-pagelines</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-paint-brush"><span class="icon-font">&#xF1FC;</span><span class="icon-name">.fa-paint-brush</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-paper-plane"><span class="icon-font">&#xF1D8;</span><span class="icon-name">.fa-paper-plane</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-paper-plane-o"><span class="icon-font">&#xF1D9;</span><span class="icon-name">.fa-paper-plane-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-paperclip"><span class="icon-font">&#xF0C6;</span><span class="icon-name">.fa-paperclip</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-paragraph"><span class="icon-font">&#xF1DD;</span><span class="icon-name">.fa-paragraph</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-paste"><span class="icon-font">&#xF0EA;</span><span class="icon-name">.fa-paste</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pause"><span class="icon-font">&#xF04C;</span><span class="icon-name">.fa-pause</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pause-circle"><span class="icon-font">&#xF28B;</span><span class="icon-name">.fa-pause-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pause-circle-o"><span class="icon-font">&#xF28C;</span><span class="icon-name">.fa-pause-circle-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-paw"><span class="icon-font">&#xF1B0;</span><span class="icon-name">.fa-paw</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-paypal"><span class="icon-font">&#xF1ED;</span><span class="icon-name">.fa-paypal</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pencil"><span class="icon-font">&#xF040;</span><span class="icon-name">.fa-pencil</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pencil-square"><span class="icon-font">&#xF14B;</span><span class="icon-name">.fa-pencil-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pencil-square-o"><span class="icon-font">&#xF044;</span><span class="icon-name">.fa-pencil-square-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-percent"><span class="icon-font">&#xF295;</span><span class="icon-name">.fa-percent</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-phone"><span class="icon-font">&#xF095;</span><span class="icon-name">.fa-phone</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-phone-square"><span class="icon-font">&#xF098;</span><span class="icon-name">.fa-phone-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-photo"><span class="icon-font">&#xF03E;</span><span class="icon-name">.fa-photo</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-picture-o"><span class="icon-font">&#xF03E;</span><span class="icon-name">.fa-picture-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pie-chart"><span class="icon-font">&#xF200;</span><span class="icon-name">.fa-pie-chart</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pied-piper"><span class="icon-font">&#xF1A7;</span><span class="icon-name">.fa-pied-piper</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pied-piper-alt"><span class="icon-font">&#xF1A8;</span><span class="icon-name">.fa-pied-piper-alt</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pinterest"><span class="icon-font">&#xF0D2;</span><span class="icon-name">.fa-pinterest</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pinterest-p"><span class="icon-font">&#xF231;</span><span class="icon-name">.fa-pinterest-p</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-pinterest-square"><span class="icon-font">&#xF0D3;</span><span class="icon-name">.fa-pinterest-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-plane"><span class="icon-font">&#xF072;</span><span class="icon-name">.fa-plane</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-play"><span class="icon-font">&#xF04B;</span><span class="icon-name">.fa-play</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-play-circle"><span class="icon-font">&#xF144;</span><span class="icon-name">.fa-play-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-play-circle-o"><span class="icon-font">&#xF01D;</span><span class="icon-name">.fa-play-circle-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-plug"><span class="icon-font">&#xF1E6;</span><span class="icon-name">.fa-plug</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-plus"><span class="icon-font">&#xF067;</span><span class="icon-name">.fa-plus</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-plus-circle"><span class="icon-font">&#xF055;</span><span class="icon-name">.fa-plus-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-plus-square"><span class="icon-font">&#xF0FE;</span><span class="icon-name">.fa-plus-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-plus-square-o"><span class="icon-font">&#xF196;</span><span class="icon-name">.fa-plus-square-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-power-off"><span class="icon-font">&#xF011;</span><span class="icon-name">.fa-power-off</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-print"><span class="icon-font">&#xF02F;</span><span class="icon-name">.fa-print</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-product-hunt"><span class="icon-font">&#xF288;</span><span class="icon-name">.fa-product-hunt</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-puzzle-piece"><span class="icon-font">&#xF12E;</span><span class="icon-name">.fa-puzzle-piece</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-qq"><span class="icon-font">&#xF1D6;</span><span class="icon-name">.fa-qq</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-qrcode"><span class="icon-font">&#xF029;</span><span class="icon-name">.fa-qrcode</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-question"><span class="icon-font">&#xF128;</span><span class="icon-name">.fa-question</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-question-circle"><span class="icon-font">&#xF059;</span><span class="icon-name">.fa-question-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-question-circle-o"><span class="icon-font">&#xF29C;</span><span class="icon-name">.fa-question-circle-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-quote-left"><span class="icon-font">&#xF10D;</span><span class="icon-name">.fa-quote-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-quote-right"><span class="icon-font">&#xF10E;</span><span class="icon-name">.fa-quote-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-ra"><span class="icon-font">&#xF1D0;</span><span class="icon-name">.fa-ra</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-random"><span class="icon-font">&#xF074;</span><span class="icon-name">.fa-random</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-rebel"><span class="icon-font">&#xF1D0;</span><span class="icon-name">.fa-rebel</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-recycle"><span class="icon-font">&#xF1B8;</span><span class="icon-name">.fa-recycle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-reddit"><span class="icon-font">&#xF1A1;</span><span class="icon-name">.fa-reddit</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-reddit-alien"><span class="icon-font">&#xF281;</span><span class="icon-name">.fa-reddit-alien</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-reddit-square"><span class="icon-font">&#xF1A2;</span><span class="icon-name">.fa-reddit-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-refresh"><span class="icon-font">&#xF021;</span><span class="icon-name">.fa-refresh</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-registered"><span class="icon-font">&#xF25D;</span><span class="icon-name">.fa-registered</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-remove"><span class="icon-font">&#xF00D;</span><span class="icon-name">.fa-remove</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-renren"><span class="icon-font">&#xF18B;</span><span class="icon-name">.fa-renren</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-reorder"><span class="icon-font">&#xF0C9;</span><span class="icon-name">.fa-reorder</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-repeat"><span class="icon-font">&#xF01E;</span><span class="icon-name">.fa-repeat</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-reply"><span class="icon-font">&#xF112;</span><span class="icon-name">.fa-reply</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-reply-all"><span class="icon-font">&#xF122;</span><span class="icon-name">.fa-reply-all</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-retweet"><span class="icon-font">&#xF079;</span><span class="icon-name">.fa-retweet</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-rmb"><span class="icon-font">&#xF157;</span><span class="icon-name">.fa-rmb</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-road"><span class="icon-font">&#xF018;</span><span class="icon-name">.fa-road</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-rocket"><span class="icon-font">&#xF135;</span><span class="icon-name">.fa-rocket</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-rotate-left"><span class="icon-font">&#xF0E2;</span><span class="icon-name">.fa-rotate-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-rotate-right"><span class="icon-font">&#xF01E;</span><span class="icon-name">.fa-rotate-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-rouble"><span class="icon-font">&#xF158;</span><span class="icon-name">.fa-rouble</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-rss"><span class="icon-font">&#xF09E;</span><span class="icon-name">.fa-rss</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-rss-square"><span class="icon-font">&#xF143;</span><span class="icon-name">.fa-rss-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-rub"><span class="icon-font">&#xF158;</span><span class="icon-name">.fa-rub</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-ruble"><span class="icon-font">&#xF158;</span><span class="icon-name">.fa-ruble</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-rupee"><span class="icon-font">&#xF156;</span><span class="icon-name">.fa-rupee</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-safari"><span class="icon-font">&#xF267;</span><span class="icon-name">.fa-safari</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-save"><span class="icon-font">&#xF0C7;</span><span class="icon-name">.fa-save</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-scissors"><span class="icon-font">&#xF0C4;</span><span class="icon-name">.fa-scissors</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-scribd"><span class="icon-font">&#xF28A;</span><span class="icon-name">.fa-scribd</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-search"><span class="icon-font">&#xF002;</span><span class="icon-name">.fa-search</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-search-minus"><span class="icon-font">&#xF010;</span><span class="icon-name">.fa-search-minus</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-search-plus"><span class="icon-font">&#xF00E;</span><span class="icon-name">.fa-search-plus</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sellsy"><span class="icon-font">&#xF213;</span><span class="icon-name">.fa-sellsy</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-send"><span class="icon-font">&#xF1D8;</span><span class="icon-name">.fa-send</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-send-o"><span class="icon-font">&#xF1D9;</span><span class="icon-name">.fa-send-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-server"><span class="icon-font">&#xF233;</span><span class="icon-name">.fa-server</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-share"><span class="icon-font">&#xF064;</span><span class="icon-name">.fa-share</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-share-alt"><span class="icon-font">&#xF1E0;</span><span class="icon-name">.fa-share-alt</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-share-alt-square"><span class="icon-font">&#xF1E1;</span><span class="icon-name">.fa-share-alt-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-share-square"><span class="icon-font">&#xF14D;</span><span class="icon-name">.fa-share-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-share-square-o"><span class="icon-font">&#xF045;</span><span class="icon-name">.fa-share-square-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-shekel"><span class="icon-font">&#xF20B;</span><span class="icon-name">.fa-shekel</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sheqel"><span class="icon-font">&#xF20B;</span><span class="icon-name">.fa-sheqel</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-shield"><span class="icon-font">&#xF132;</span><span class="icon-name">.fa-shield</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-ship"><span class="icon-font">&#xF21A;</span><span class="icon-name">.fa-ship</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-shirtsinbulk"><span class="icon-font">&#xF214;</span><span class="icon-name">.fa-shirtsinbulk</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-shopping-bag"><span class="icon-font">&#xF290;</span><span class="icon-name">.fa-shopping-bag</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-shopping-basket"><span class="icon-font">&#xF291;</span><span class="icon-name">.fa-shopping-basket</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-shopping-cart"><span class="icon-font">&#xF07A;</span><span class="icon-name">.fa-shopping-cart</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sign-in"><span class="icon-font">&#xF090;</span><span class="icon-name">.fa-sign-in</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sign-language"><span class="icon-font">&#xF2A7;</span><span class="icon-name">.fa-sign-language</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sign-out"><span class="icon-font">&#xF08B;</span><span class="icon-name">.fa-sign-out</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-signal"><span class="icon-font">&#xF012;</span><span class="icon-name">.fa-signal</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-signing"><span class="icon-font">&#xF2A7;</span><span class="icon-name">.fa-signing</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-simplybuilt"><span class="icon-font">&#xF215;</span><span class="icon-name">.fa-simplybuilt</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sitemap"><span class="icon-font">&#xF0E8;</span><span class="icon-name">.fa-sitemap</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-skyatlas"><span class="icon-font">&#xF216;</span><span class="icon-name">.fa-skyatlas</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-skype"><span class="icon-font">&#xF17E;</span><span class="icon-name">.fa-skype</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-slack"><span class="icon-font">&#xF198;</span><span class="icon-name">.fa-slack</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sliders"><span class="icon-font">&#xF1DE;</span><span class="icon-name">.fa-sliders</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-slideshare"><span class="icon-font">&#xF1E7;</span><span class="icon-name">.fa-slideshare</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-smile-o"><span class="icon-font">&#xF118;</span><span class="icon-name">.fa-smile-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-snapchat"><span class="icon-font">&#xF2AB;</span><span class="icon-name">.fa-snapchat</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-snapchat-ghost"><span class="icon-font">&#xF2AC;</span><span class="icon-name">.fa-snapchat-ghost</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-snapchat-square"><span class="icon-font">&#xF2AD;</span><span class="icon-name">.fa-snapchat-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-soccer-ball-o"><span class="icon-font">&#xF1E3;</span><span class="icon-name">.fa-soccer-ball-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sort"><span class="icon-font">&#xF0DC;</span><span class="icon-name">.fa-sort</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sort-alpha-asc"><span class="icon-font">&#xF15D;</span><span class="icon-name">.fa-sort-alpha-asc</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sort-alpha-desc"><span class="icon-font">&#xF15E;</span><span class="icon-name">.fa-sort-alpha-desc</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sort-amount-asc"><span class="icon-font">&#xF160;</span><span class="icon-name">.fa-sort-amount-asc</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sort-amount-desc"><span class="icon-font">&#xF161;</span><span class="icon-name">.fa-sort-amount-desc</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sort-asc"><span class="icon-font">&#xF0DE;</span><span class="icon-name">.fa-sort-asc</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sort-desc"><span class="icon-font">&#xF0DD;</span><span class="icon-name">.fa-sort-desc</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sort-down"><span class="icon-font">&#xF0DD;</span><span class="icon-name">.fa-sort-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sort-numeric-asc"><span class="icon-font">&#xF162;</span><span class="icon-name">.fa-sort-numeric-asc</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sort-numeric-desc"><span class="icon-font">&#xF163;</span><span class="icon-name">.fa-sort-numeric-desc</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sort-up"><span class="icon-font">&#xF0DE;</span><span class="icon-name">.fa-sort-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-soundcloud"><span class="icon-font">&#xF1BE;</span><span class="icon-name">.fa-soundcloud</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-space-shuttle"><span class="icon-font">&#xF197;</span><span class="icon-name">.fa-space-shuttle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-spinner"><span class="icon-font">&#xF110;</span><span class="icon-name">.fa-spinner</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-spoon"><span class="icon-font">&#xF1B1;</span><span class="icon-name">.fa-spoon</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-spotify"><span class="icon-font">&#xF1BC;</span><span class="icon-name">.fa-spotify</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-square"><span class="icon-font">&#xF0C8;</span><span class="icon-name">.fa-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-square-o"><span class="icon-font">&#xF096;</span><span class="icon-name">.fa-square-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-stack-exchange"><span class="icon-font">&#xF18D;</span><span class="icon-name">.fa-stack-exchange</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-stack-overflow"><span class="icon-font">&#xF16C;</span><span class="icon-name">.fa-stack-overflow</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-star"><span class="icon-font">&#xF005;</span><span class="icon-name">.fa-star</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-star-half"><span class="icon-font">&#xF089;</span><span class="icon-name">.fa-star-half</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-star-half-empty"><span class="icon-font">&#xF123;</span><span class="icon-name">.fa-star-half-empty</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-star-half-full"><span class="icon-font">&#xF123;</span><span class="icon-name">.fa-star-half-full</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-star-half-o"><span class="icon-font">&#xF123;</span><span class="icon-name">.fa-star-half-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-star-o"><span class="icon-font">&#xF006;</span><span class="icon-name">.fa-star-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-steam"><span class="icon-font">&#xF1B6;</span><span class="icon-name">.fa-steam</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-steam-square"><span class="icon-font">&#xF1B7;</span><span class="icon-name">.fa-steam-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-step-backward"><span class="icon-font">&#xF048;</span><span class="icon-name">.fa-step-backward</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-step-forward"><span class="icon-font">&#xF051;</span><span class="icon-name">.fa-step-forward</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-stethoscope"><span class="icon-font">&#xF0F1;</span><span class="icon-name">.fa-stethoscope</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sticky-note"><span class="icon-font">&#xF249;</span><span class="icon-name">.fa-sticky-note</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sticky-note-o"><span class="icon-font">&#xF24A;</span><span class="icon-name">.fa-sticky-note-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-stop"><span class="icon-font">&#xF04D;</span><span class="icon-name">.fa-stop</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-stop-circle"><span class="icon-font">&#xF28D;</span><span class="icon-name">.fa-stop-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-stop-circle-o"><span class="icon-font">&#xF28E;</span><span class="icon-name">.fa-stop-circle-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-street-view"><span class="icon-font">&#xF21D;</span><span class="icon-name">.fa-street-view</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-strikethrough"><span class="icon-font">&#xF0CC;</span><span class="icon-name">.fa-strikethrough</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-stumbleupon"><span class="icon-font">&#xF1A4;</span><span class="icon-name">.fa-stumbleupon</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-stumbleupon-circle"><span class="icon-font">&#xF1A3;</span><span class="icon-name">.fa-stumbleupon-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-subscript"><span class="icon-font">&#xF12C;</span><span class="icon-name">.fa-subscript</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-subway"><span class="icon-font">&#xF239;</span><span class="icon-name">.fa-subway</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-suitcase"><span class="icon-font">&#xF0F2;</span><span class="icon-name">.fa-suitcase</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-sun-o"><span class="icon-font">&#xF185;</span><span class="icon-name">.fa-sun-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-superscript"><span class="icon-font">&#xF12B;</span><span class="icon-name">.fa-superscript</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-support"><span class="icon-font">&#xF1CD;</span><span class="icon-name">.fa-support</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-table"><span class="icon-font">&#xF0CE;</span><span class="icon-name">.fa-table</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tablet"><span class="icon-font">&#xF10A;</span><span class="icon-name">.fa-tablet</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tachometer"><span class="icon-font">&#xF0E4;</span><span class="icon-name">.fa-tachometer</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tag"><span class="icon-font">&#xF02B;</span><span class="icon-name">.fa-tag</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tags"><span class="icon-font">&#xF02C;</span><span class="icon-name">.fa-tags</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tasks"><span class="icon-font">&#xF0AE;</span><span class="icon-name">.fa-tasks</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-taxi"><span class="icon-font">&#xF1BA;</span><span class="icon-name">.fa-taxi</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-television"><span class="icon-font">&#xF26C;</span><span class="icon-name">.fa-television</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tencent-weibo"><span class="icon-font">&#xF1D5;</span><span class="icon-name">.fa-tencent-weibo</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-terminal"><span class="icon-font">&#xF120;</span><span class="icon-name">.fa-terminal</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-text-height"><span class="icon-font">&#xF034;</span><span class="icon-name">.fa-text-height</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-text-width"><span class="icon-font">&#xF035;</span><span class="icon-name">.fa-text-width</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-th"><span class="icon-font">&#xF00A;</span><span class="icon-name">.fa-th</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-th-large"><span class="icon-font">&#xF009;</span><span class="icon-name">.fa-th-large</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-th-list"><span class="icon-font">&#xF00B;</span><span class="icon-name">.fa-th-list</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-thumb-tack"><span class="icon-font">&#xF08D;</span><span class="icon-name">.fa-thumb-tack</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-thumbs-down"><span class="icon-font">&#xF165;</span><span class="icon-name">.fa-thumbs-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-thumbs-o-down"><span class="icon-font">&#xF088;</span><span class="icon-name">.fa-thumbs-o-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-thumbs-o-up"><span class="icon-font">&#xF087;</span><span class="icon-name">.fa-thumbs-o-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-thumbs-up"><span class="icon-font">&#xF164;</span><span class="icon-name">.fa-thumbs-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-ticket"><span class="icon-font">&#xF145;</span><span class="icon-name">.fa-ticket</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-times"><span class="icon-font">&#xF00D;</span><span class="icon-name">.fa-times</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-times-circle"><span class="icon-font">&#xF057;</span><span class="icon-name">.fa-times-circle</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-times-circle-o"><span class="icon-font">&#xF05C;</span><span class="icon-name">.fa-times-circle-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tint"><span class="icon-font">&#xF043;</span><span class="icon-name">.fa-tint</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-toggle-down"><span class="icon-font">&#xF150;</span><span class="icon-name">.fa-toggle-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-toggle-left"><span class="icon-font">&#xF191;</span><span class="icon-name">.fa-toggle-left</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-toggle-off"><span class="icon-font">&#xF204;</span><span class="icon-name">.fa-toggle-off</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-toggle-on"><span class="icon-font">&#xF205;</span><span class="icon-name">.fa-toggle-on</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-toggle-right"><span class="icon-font">&#xF152;</span><span class="icon-name">.fa-toggle-right</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-toggle-up"><span class="icon-font">&#xF151;</span><span class="icon-name">.fa-toggle-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-trademark"><span class="icon-font">&#xF25C;</span><span class="icon-name">.fa-trademark</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-train"><span class="icon-font">&#xF238;</span><span class="icon-name">.fa-train</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-transgender"><span class="icon-font">&#xF224;</span><span class="icon-name">.fa-transgender</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-transgender-alt"><span class="icon-font">&#xF225;</span><span class="icon-name">.fa-transgender-alt</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-trash"><span class="icon-font">&#xF1F8;</span><span class="icon-name">.fa-trash</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-trash-o"><span class="icon-font">&#xF014;</span><span class="icon-name">.fa-trash-o</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tree"><span class="icon-font">&#xF1BB;</span><span class="icon-name">.fa-tree</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-trello"><span class="icon-font">&#xF181;</span><span class="icon-name">.fa-trello</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tripadvisor"><span class="icon-font">&#xF262;</span><span class="icon-name">.fa-tripadvisor</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-trophy"><span class="icon-font">&#xF091;</span><span class="icon-name">.fa-trophy</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-truck"><span class="icon-font">&#xF0D1;</span><span class="icon-name">.fa-truck</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-try"><span class="icon-font">&#xF195;</span><span class="icon-name">.fa-try</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tty"><span class="icon-font">&#xF1E4;</span><span class="icon-name">.fa-tty</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tumblr"><span class="icon-font">&#xF173;</span><span class="icon-name">.fa-tumblr</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tumblr-square"><span class="icon-font">&#xF174;</span><span class="icon-name">.fa-tumblr-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-turkish-lira"><span class="icon-font">&#xF195;</span><span class="icon-name">.fa-turkish-lira</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-tv"><span class="icon-font">&#xF26C;</span><span class="icon-name">.fa-tv</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-twitch"><span class="icon-font">&#xF1E8;</span><span class="icon-name">.fa-twitch</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-twitter"><span class="icon-font">&#xF099;</span><span class="icon-name">.fa-twitter</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-twitter-square"><span class="icon-font">&#xF081;</span><span class="icon-name">.fa-twitter-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-umbrella"><span class="icon-font">&#xF0E9;</span><span class="icon-name">.fa-umbrella</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-underline"><span class="icon-font">&#xF0CD;</span><span class="icon-name">.fa-underline</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-undo"><span class="icon-font">&#xF0E2;</span><span class="icon-name">.fa-undo</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-universal-access"><span class="icon-font">&#xF29A;</span><span class="icon-name">.fa-universal-access</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-university"><span class="icon-font">&#xF19C;</span><span class="icon-name">.fa-university</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-unlink"><span class="icon-font">&#xF127;</span><span class="icon-name">.fa-unlink</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-unlock"><span class="icon-font">&#xF09C;</span><span class="icon-name">.fa-unlock</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-unlock-alt"><span class="icon-font">&#xF13E;</span><span class="icon-name">.fa-unlock-alt</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-unsorted"><span class="icon-font">&#xF0DC;</span><span class="icon-name">.fa-unsorted</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-upload"><span class="icon-font">&#xF093;</span><span class="icon-name">.fa-upload</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-usb"><span class="icon-font">&#xF287;</span><span class="icon-name">.fa-usb</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-usd"><span class="icon-font">&#xF155;</span><span class="icon-name">.fa-usd</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-user"><span class="icon-font">&#xF007;</span><span class="icon-name">.fa-user</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-user-md"><span class="icon-font">&#xF0F0;</span><span class="icon-name">.fa-user-md</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-user-plus"><span class="icon-font">&#xF234;</span><span class="icon-name">.fa-user-plus</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-user-secret"><span class="icon-font">&#xF21B;</span><span class="icon-name">.fa-user-secret</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-user-times"><span class="icon-font">&#xF235;</span><span class="icon-name">.fa-user-times</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-users"><span class="icon-font">&#xF0C0;</span><span class="icon-name">.fa-users</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-venus"><span class="icon-font">&#xF221;</span><span class="icon-name">.fa-venus</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-venus-double"><span class="icon-font">&#xF226;</span><span class="icon-name">.fa-venus-double</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-venus-mars"><span class="icon-font">&#xF228;</span><span class="icon-name">.fa-venus-mars</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-viacoin"><span class="icon-font">&#xF237;</span><span class="icon-name">.fa-viacoin</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-viadeo"><span class="icon-font">&#xF2A9;</span><span class="icon-name">.fa-viadeo</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-viadeo-square"><span class="icon-font">&#xF2AA;</span><span class="icon-name">.fa-viadeo-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-video-camera"><span class="icon-font">&#xF03D;</span><span class="icon-name">.fa-video-camera</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-vimeo"><span class="icon-font">&#xF27D;</span><span class="icon-name">.fa-vimeo</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-vimeo-square"><span class="icon-font">&#xF194;</span><span class="icon-name">.fa-vimeo-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-vine"><span class="icon-font">&#xF1CA;</span><span class="icon-name">.fa-vine</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-vk"><span class="icon-font">&#xF189;</span><span class="icon-name">.fa-vk</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-volume-control-phone"><span class="icon-font">&#xF2A0;</span><span class="icon-name">.fa-volume-control-phone</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-volume-down"><span class="icon-font">&#xF027;</span><span class="icon-name">.fa-volume-down</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-volume-off"><span class="icon-font">&#xF026;</span><span class="icon-name">.fa-volume-off</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-volume-up"><span class="icon-font">&#xF028;</span><span class="icon-name">.fa-volume-up</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-warning"><span class="icon-font">&#xF071;</span><span class="icon-name">.fa-warning</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-wechat"><span class="icon-font">&#xF1D7;</span><span class="icon-name">.fa-wechat</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-weibo"><span class="icon-font">&#xF18A;</span><span class="icon-name">.fa-weibo</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-weixin"><span class="icon-font">&#xF1D7;</span><span class="icon-name">.fa-weixin</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-whatsapp"><span class="icon-font">&#xF232;</span><span class="icon-name">.fa-whatsapp</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-wheelchair"><span class="icon-font">&#xF193;</span><span class="icon-name">.fa-wheelchair</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-wheelchair-alt"><span class="icon-font">&#xF29B;</span><span class="icon-name">.fa-wheelchair-alt</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-wifi"><span class="icon-font">&#xF1EB;</span><span class="icon-name">.fa-wifi</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-wikipedia-w"><span class="icon-font">&#xF266;</span><span class="icon-name">.fa-wikipedia-w</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-windows"><span class="icon-font">&#xF17A;</span><span class="icon-name">.fa-windows</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-won"><span class="icon-font">&#xF159;</span><span class="icon-name">.fa-won</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-wordpress"><span class="icon-font">&#xF19A;</span><span class="icon-name">.fa-wordpress</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-wpbeginner"><span class="icon-font">&#xF297;</span><span class="icon-name">.fa-wpbeginner</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-wpforms"><span class="icon-font">&#xF298;</span><span class="icon-name">.fa-wpforms</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-wrench"><span class="icon-font">&#xF0AD;</span><span class="icon-name">.fa-wrench</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-xing"><span class="icon-font">&#xF168;</span><span class="icon-name">.fa-xing</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-xing-square"><span class="icon-font">&#xF169;</span><span class="icon-name">.fa-xing-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-y-combinator"><span class="icon-font">&#xF23B;</span><span class="icon-name">.fa-y-combinator</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-y-combinator-square"><span class="icon-font">&#xF1D4;</span><span class="icon-name">.fa-y-combinator-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-yahoo"><span class="icon-font">&#xF19E;</span><span class="icon-name">.fa-yahoo</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-yc"><span class="icon-font">&#xF23B;</span><span class="icon-name">.fa-yc</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-yc-square"><span class="icon-font">&#xF1D4;</span><span class="icon-name">.fa-yc-square</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-yelp"><span class="icon-font">&#xF1E9;</span><span class="icon-name">.fa-yelp</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-yen"><span class="icon-font">&#xF157;</span><span class="icon-name">.fa-yen</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-youtube"><span class="icon-font">&#xF167;</span><span class="icon-name">.fa-youtube</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-youtube-play"><span class="icon-font">&#xF16A;</span><span class="icon-name">.fa-youtube-play</span></div></div>
-		<div class="col-33"><div class="icon-item" data-key="fa-youtube-square"><span class="icon-font">&#xF166;</span><span class="icon-name">.fa-youtube-square</span></div></div>
-	</main>
-	<footer id="down" role="contentinfo">
-
-	</footer>
-	<script src="io/js/all.js"></script>
-	<script>
-		/* https://r12a.github.io/apps/conversion/ */
-		var i = 0
-		, icon = []
-		, iconSize = document.getElementsByClassName('icon-item')
-		;
-		for(;i<iconSize.length;i++){
-			var text = iconSize[i].dataset.key;
-			icon.push(text.split('|'));
-		}
-		document.getElementById('result-number').textContent = iconSize.length;
-		document.getElementById('search').addEventListener('keyup', function(e){
-			var valor = this.value;
-			icon.forEach(function(e,i){
-				var regex = new RegExp(valor, "gi")
-				, box = document.querySelectorAll('.icon-item')[i].parentNode
-				;
-				regex.test(icon[i]) ? box.classList.remove('d-n') : box.classList.add('d-n');
-			});
-			var size = (iconSize.length - document.getElementsByClassName('d-n').length);
-			document.getElementById('result-number').textContent = size;
-			(size===1||size===0) ? document.getElementById('result-text').textContent = 'resultado' : document.getElementById('result-text').textContent = 'resultados';
-		});
-	</script>
-	<noscript>
-		<p>Infelizmente sua página não poderá funcionar corretamente, pois o javascript do seu navegador está desabilitado. Habilite-o para ter uma melhor navegação e funcionalidades neste site.</p>
-	</noscript>
+  <div class="header">
+    <h1 class="header--logo" aria-label="Fontastico icons font">Fontastico</h1>
+    <div class="header--search">
+      <input class="header--input" type="text" data-search placeholder="Nome do ícone">
+    </div>
+    <span class="header--count">
+      <span class="header--counter">0</span>
+    </span>
+  </div>
+  <div class="main"></div>
+  <script>
+    const iconConfig = [
+      {
+        "url": "fonts/ionicons/css/ionicons.css",
+        "name": "Ionicons",
+        "family": "Ionicons",
+        "version": "2.0.1"
+      },
+      {
+        "url": "fonts/fontawesome/css/fontawesome-all.css",
+        "name": "Font Awesome",
+        "family": "FontAwesome",
+        "version": "5.0.2"
+      },
+      {
+        "url": "fonts/hawcons/css/style.css",
+        "name": "Hawcons Stroke",
+        "family": "hawcons",
+        "version": "1.0.0",
+        "rename": ["icon-icon-", "hs-"]
+      },
+      {
+        "url": {
+          "font": "https://fonts.googleapis.com/icon?family=Material+Icons",
+          "codepoint": "https://rawgit.com/google/material-design-icons/master/iconfont/codepoints",
+        },
+        "name": "Material Icons",
+        "family": "Material Icons",
+        "version": "3.0.1",
+      }
+    ];
+    iconConfig.map((config, i) => {
+      const url = typeof config.url === 'object' ? config.url.codepoint : config.url;
+      fetch(url).then(res => res.text()).then(file => {
+        const css = file.replace(/\n/g,'').replace(/\s/g,''),
+        iconItem = css.match(/\.(\w|\d|-|_){1,}\:before{content:.{1,9}}/g),
+        main = document.querySelector('.main');
+        main.insertAdjacentHTML('beforeend',`<h2 class="icon--title" data-title>${config.name} <small class="icon--version">(v${config.version})</small></h2><div class="icon--wrap"></div>`);
+        document.head.insertAdjacentHTML('beforeend',`<link rel="stylesheet" href="${typeof config.url === 'object' ? config.url.font : config.url}" />`);
+        if(config.rename){
+          iconItem.map((name, j) => {
+            iconItem[j] = name.replace(config.rename[0], config.rename[1])
+          });
+        }
+        let count
+        if(!iconItem){
+          const iconItemFix = file.match(/.+\n/g);
+          iconItemFix.map(icon => {
+            const iconArray = icon.split(' ');
+            main.lastChild.insertAdjacentHTML('beforeend',`<div class="icon--item"><div class="icon--symbol" style="font-family: '${config.family}'">${iconArray[0]}</div><div class="icon--name">${iconArray[0]}</div><div class="icon--unicode">\\${iconArray[1]}</div></div>`);
+          });
+        } else {
+          iconItem.map(icon => {
+            const iconArray = icon.replace(/\.|\}|;|\"/g,'').split(':before{content:\\');
+            main.lastChild.insertAdjacentHTML('beforeend',`<div class="icon--item"><div class="icon--symbol" style="font-family: '${config.family}'">&#x${iconArray[1]}</div><div class="icon--name">${iconArray[0]}</div><div class="icon--unicode">\\${iconArray[1]}</div></div>`);
+          });
+        }
+        document.querySelector('.header--counter').textContent = document.querySelectorAll('.icon--item').length;
+      });
+    });
+    document.querySelector('[data-search]').addEventListener('input', (event) => {
+        var regex = new RegExp(event.target.value, 'g');
+        document.querySelectorAll('.icon--name').forEach(item => {
+            var txt = item.textContent;
+            regex.test(txt) ? item.parentNode.classList.remove('icon--item-hidden') : item.parentNode.classList.add('icon--item-hidden');
+        });
+        document.querySelector('.header--counter').textContent = document.querySelectorAll('.icon--item:not(.icon--item-hidden)').length;
+    });
+    document.addEventListener('click', (event) => {
+      const that = event.target;
+      if(that.hasAttribute('data-title')){
+        that.nextElementSibling.classList.toggle('icon--wrap-active');
+        that.classList.toggle('icon--title-active');
+      }
+    });
+  </script>
 </body>
 </html>
