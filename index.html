@@ -4,127 +4,22 @@
   <meta charset="UTF-8">
   <title>Fontastico Fonts</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1" />
-  <style>
-    *{padding: 0;margin: 0;box-sizing: border-box;}
-    body{font-family: Arial;overflow-x: hidden;}
-    @keyframes headerHearth{
-      0%{transform: scale(1);}
-      10%{transform: scale(1.2);}
-      20%{transform: scale(1);}
-      30%{transform: scale(1.2);}
-      40%{transform: scale(1);}
-      100%{transform: scale(1);}
-    }
-    [pseudo-before]:before{content: attr(pseudo-before);}
-    .header{display: flex;padding: 10px;background-color: #eee;align-items: center;margin-bottom: 5px;}
-    .header--logo{width: 20%;position: relative;color: #e66;font-family: Arial, sans-serif;font-size: 22px;}
-    .header--logo:before{content: '♥ ';color: #e99;animation: headerHearth 1.4s infinite;display: inline-block;margin-right: 6px;}
-    .header--logo:after{content: '://icon.font';color: #999;font-size: 18px;}
-    .header--search{width: 70%;}
-    .header--input{width: 100%;padding: 10px;border: 1px solid #ccc;border-radius: 4px;}
-    .header--count{width: 10%;text-align: right;}
-    .header--counter{height: 17px;padding: 0 4px;line-height: 17px;font-family: Verdana;text-align: center;background-color: #e66;color: #fff;border-radius: 20px;font-size: 13px;display: inline-block;}
-    .icon--title{width: 100%;padding: 4px 20px 2px;font-size: 20px;text-align: center;background-color: #e66;color: #fff;margin-bottom: 10px;cursor: pointer;position: relative;transition: background-color .6s, color .6s;}
-    .icon--title:before{content: '';position: absolute;right: 10px;top: 10px;border: 7px solid transparent;border-top-color: #fff;transition: color .6s, transform .6s;transform-origin: 50% 4px;}
-    .icon--title-active{background-color: #ddd;color: #bbb;}
-    .icon--title-active:before{border-top-color: #bbb;transform: rotate(180deg);}
-    .icon--title-active .icon--version{color: #bbb;}
-    .icon--version{font-size: 10px;font-weight: lighter;display: inline-block;transform: translateY(-2px);color: #fbb;transition: color .6s;}
-    .icon--wrap{margin: 0 10px 10px;display: flex;flex-wrap: wrap;}
-    .icon--wrap-active{display: none;}
-    .icon--item{width: 10.6%;margin: .2%;border: 1px solid #eee;border-radius: 3px;padding: 3px;text-align: center;position: relative;}
-    .icon--item-hidden{display: none;}
-    .icon--unicode{position: absolute;right: 3px;top: 3px;padding: 3px 5px;border-radius: 2px;background-color: #ddd;color: #666;font-size: 10px;}
-    .icon--name{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;font-size: 12px;background-color: #eee;padding: 3px 4px;}
-    .icon--symbol{font-size: 40px;color: #777;height: 46px;}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="log"></div>
   <div class="header">
     <h1 class="header--logo" aria-label="Fontastico icons font">Fontastico</h1>
     <div class="header--search">
-      <input class="header--input" type="text" data-search placeholder="Nome do ícone">
+      <input class="header--input" type="text" data-search placeholder="Search icons name">
     </div>
     <span class="header--count">
       <span class="header--counter">0</span>
     </span>
   </div>
   <div class="main"></div>
-  <script>
-    const iconConfig = [
-      {
-        "url": "fonts/ionicons/css/ionicons.css",
-        "name": "Ionicons",
-        "family": "Ionicons",
-        "version": "2.0.1"
-      },
-      {
-        "url": "fonts/fontawesome/css/fontawesome-all.css",
-        "name": "Font Awesome",
-        "family": "FontAwesome",
-        "version": "5.0.2"
-      },
-      {
-        "url": "fonts/hawcons/css/style.css",
-        "name": "Hawcons Stroke",
-        "family": "hawcons",
-        "version": "1.0.0",
-        "rename": ["icon-icon-", "hs-"]
-      },
-      {
-        "url": {
-          "font": "https://fonts.googleapis.com/icon?family=Material+Icons",
-          "codepoint": "https://rawgit.com/google/material-design-icons/master/iconfont/codepoints",
-        },
-        "name": "Material Icons",
-        "family": "Material Icons",
-        "version": "3.0.1",
-      }
-    ];
-    iconConfig.map((config, i) => {
-      const url = typeof config.url === 'object' ? config.url.codepoint : config.url;
-      fetch(url).then(res => res.text()).then(file => {
-        const css = file.replace(/\n/g,'').replace(/\s/g,''),
-        iconItem = css.match(/\.(\w|\d|-|_){1,}\:before{content:.{1,9}}/g),
-        main = document.querySelector('.main');
-        main.insertAdjacentHTML('beforeend',`<h2 class="icon--title" data-title>${config.name} <small class="icon--version">(v${config.version})</small></h2><div class="icon--wrap"></div>`);
-        document.head.insertAdjacentHTML('beforeend',`<link rel="stylesheet" href="${typeof config.url === 'object' ? config.url.font : config.url}" />`);
-        if(config.rename){
-          iconItem.map((name, j) => {
-            iconItem[j] = name.replace(config.rename[0], config.rename[1])
-          });
-        }
-        let count
-        if(!iconItem){
-          const iconItemFix = file.match(/.+\n/g);
-          iconItemFix.map(icon => {
-            const iconArray = icon.split(' ');
-            main.lastChild.insertAdjacentHTML('beforeend',`<div class="icon--item"><div class="icon--symbol" style="font-family: '${config.family}'">${iconArray[0]}</div><div class="icon--name">${iconArray[0]}</div><div class="icon--unicode">\\${iconArray[1]}</div></div>`);
-          });
-        } else {
-          iconItem.map(icon => {
-            const iconArray = icon.replace(/\.|\}|;|\"/g,'').split(':before{content:\\');
-            main.lastChild.insertAdjacentHTML('beforeend',`<div class="icon--item"><div class="icon--symbol" style="font-family: '${config.family}'">&#x${iconArray[1]}</div><div class="icon--name">${iconArray[0]}</div><div class="icon--unicode">\\${iconArray[1]}</div></div>`);
-          });
-        }
-        document.querySelector('.header--counter').textContent = document.querySelectorAll('.icon--item').length;
-      });
-    });
-    document.querySelector('[data-search]').addEventListener('input', (event) => {
-        var regex = new RegExp(event.target.value, 'g');
-        document.querySelectorAll('.icon--name').forEach(item => {
-            var txt = item.textContent;
-            regex.test(txt) ? item.parentNode.classList.remove('icon--item-hidden') : item.parentNode.classList.add('icon--item-hidden');
-        });
-        document.querySelector('.header--counter').textContent = document.querySelectorAll('.icon--item:not(.icon--item-hidden)').length;
-    });
-    document.addEventListener('click', (event) => {
-      const that = event.target;
-      if(that.hasAttribute('data-title')){
-        that.nextElementSibling.classList.toggle('icon--wrap-active');
-        that.classList.toggle('icon--title-active');
-      }
-    });
-  </script>
+  <script src="fontastico.js" async></script>
+  <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/v1.7.1/dist/clipboard.min.js"></script>
+  <script>const clipcode=new Clipboard('[data-clipboard]');clipcode.on('success',(e)=>{const type = e.trigger.classList.contains('icon--name') ? 'Icon name' : 'Unicode';log(`${type}: <strong>${e.text}</strong>, copied!`);});const clipcdn=new Clipboard('[data-cdn]');clipcdn.on('success',(e)=>{log(`<strong>${e.trigger.parentNode.firstChild.data}</strong> CDN link copied!`);});</script>
 </body>
 </html>
