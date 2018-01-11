@@ -4,22 +4,21 @@
   <meta charset="UTF-8">
   <title>Fontastico Fonts</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1" />
-  <link rel="stylesheet" href="style.css">
+  <script async="" src="fontastico.js"></script>
+  <script async="" src="https://cdn.rawgit.com/zenorocha/clipboard.js/v1.7.1/dist/clipboard.min.js"></script>
 </head>
 <body>
   <div class="log"></div>
   <div class="header">
     <h1 class="header--logo" aria-label="Fontastico icons font">Fontastico</h1>
     <div class="header--search">
-      <input class="header--input" type="text" data-search placeholder="Search icons name">
+      <input class="header--input" type="text" data-search placeholder="Search Icons Name">
     </div>
     <span class="header--count">
       <span class="header--counter">0</span>
     </span>
   </div>
   <div class="main"></div>
-  <script src="fontastico.js" async></script>
-  <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/v1.7.1/dist/clipboard.min.js"></script>
-  <script>const clipcode=new Clipboard('[data-clipboard]');clipcode.on('success',(e)=>{const type = e.trigger.classList.contains('icon--name') ? 'Icon name' : 'Unicode';log(`${type}: <strong>${e.text}</strong>, copied!`);});const clipcdn=new Clipboard('[data-cdn]');clipcdn.on('success',(e)=>{log(`<strong>${e.trigger.parentNode.firstChild.data}</strong> CDN link copied!`);});</script>
+  <script>window.addEventListener('load',event=>{const clipcode=new Clipboard('[data-clipboard]');clipcode.on('success',(e)=>{const type=e.trigger.classList.contains('icon--name')?'Icon name':'Unicode';log(`${type}: <strong>${e.text}</strong>, copied!`);});const clipcdn=new Clipboard('[data-cdn]');clipcdn.on('success',(e)=>{log(`<strong>${e.trigger.parentNode.firstChild.data}</strong> CDN link copied!`);});});</script>
 </body>
 </html>

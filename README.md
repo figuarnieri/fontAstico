@@ -1,3 +1,5 @@
-# FontAstico 2.0.0
+# FontAstico
+A project created to help you search for and use icon fonts from various libraries, and providing a CSS CDN link to fonts
 
-- "git clone https://github.com/figuarnieri/fontAstico.git"
+##Preview
+[figuarnieri.github.io/fontastico/](https://figuarnieri.github.io/fontastico/)

@@ -21,11 +21,12 @@ body{font-family: Arial;overflow-x: hidden;overflow-y: scroll;}
 .icon--toggle, .icon--network{position: absolute;right: 2px;top: 2px;width: 24px;height: 24px;background-color: #fff;border-style: none;cursor: pointer;transition: background-color .6s;}
 .icon--toggle:before{content: '';border: 7px solid transparent;border-bottom-color: #e66;transition: border-bottom-color .6s, transform .6s;transform-origin: 50% 11px;position: absolute;top: 1px;right: 4px;}
 .icon--network{right: 28px;transition: background-color .6s;text-decoration: none;}
-.icon--network:before{content: '\1f5a7';font-size: 20px;line-height: 24px;color: #e66;transition: color .6s;}
+.icon--network:before{content: '';position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: 1;}
+.icon--network-svg{margin-top: 4px;fill: #e66;transition: fill .6s;width: 20px;height: auto;} 
 .icon--title-active{background-color: #ddd;color: #bbb;}
 .icon--title-active .icon--toggle, .icon--title-active .icon--network{background-color: #999;}
 .icon--title-active .icon--toggle:before{transform: rotate(180deg);border-bottom-color: #bbb;display: block;}
-.icon--title-active .icon--network:before{color: #bbb;}
+.icon--title-active .icon--network-svg{fill: #bbb;}
 .icon--title-active .icon--version{color: #bbb;}
 .icon--version{font-size: 10px;font-weight: lighter;display: inline-block;transform: translateY(-2px);color: #fbb;transition: color .6s;}
 .icon--wrap{margin: 0 10px 10px;display: flex;flex-wrap: wrap;}
